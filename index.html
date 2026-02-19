@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bitcoin Ordinals Viewer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="page__header">
+      <h1>Bitcoin Ordinals Viewer</h1>
+      <p class="page__subtitle">
+        Enter a Bitcoin address to see its Ordinals inscriptions using a free public API.
+      </p>
+    </header>
+
+    <section class="card card--form">
+      <form id="address-form" autocomplete="off">
+        <div class="field">
+          <label for="address">Bitcoin address</label>
+          <input
+            id="address"
+            name="address"
+            type="text"
+            inputmode="text"
+            placeholder="bc1q..."
+            required
+          />
+          <p class="field__hint">
+            Paste a Bitcoin address that holds Ordinals inscriptions.
+          </p>
+        </div>
+
+        <button type="submit" class="button">Fetch Ordinals</button>
+      </form>
+    </section>
+
+    <section id="balance" class="status status--info">
+      <!-- Balance info will appear here -->
+    </section>
+
+    <section aria-live="polite" aria-atomic="true" id="status" class="status">
+      <!-- Status messages injected by script.js -->
+    </section>
+
+    <section class="results">
+      <h2 class="results__title">Inscriptions</h2>
+      <div id="results" class="results__grid">
+        <!-- Inscription cards rendered here -->
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
